@@ -14,7 +14,9 @@ export default {
   components: { Header, Tasks },
   methods: {
     deleteTask(id) {
-      this.tasks = this.tasks.filter((task) => task.id !== id);
+      if (confirm("Are you sure about this?")) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+      }
     },
   },
   data() {
